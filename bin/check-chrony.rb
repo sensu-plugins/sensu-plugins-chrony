@@ -19,21 +19,25 @@ class CheckChrony < Sensu::Plugin::Check::CLI
   option :warn_offset,
          :description => "Warn if OFFSET exceeds current offset (ms)",
          :long => "--warn-offset <OFFSET>",
+         :proc => proc(&:to_f),
          :default => 50
 
   option :crit_offset,
          :description => "Critical if OFFSET exceeds current offset (ms)",
          :long => "--crit-offset <OFFSET>",
+         :proc => proc(&:to_f),
          :default => 100
 
   option :warn_stratum,
          :description => "Warn if STRATUM exceeds current stratum",
          :long => "--warn-stratum <STRATUM>",
+         :proc => proc(&:to_i),
          :default => 10
 
   option :crit_stratum,
          :description => "Critical if STRATUM exceeds current stratum",
          :long => "--crit-stratum <STRATUM>",
+         :proc => proc(&:to_i),
          :default => 16
 
   option :dryrun,
