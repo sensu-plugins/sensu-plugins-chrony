@@ -115,7 +115,7 @@ class CheckChrony < Sensu::Plugin::Check::CLI
 
     if offset
       check_name = "chrony-offset"
-      msg = "NTP offset is #{offset}ms"
+      msg = "NTP offset is #{offset.round(4)}ms"
 
       if offset >= config[:crit_offset] or offset <= -config[:crit_offset]
         msg += ", expected > -#{config[:crit_offset]} and < #{config[:crit_offset]}"
