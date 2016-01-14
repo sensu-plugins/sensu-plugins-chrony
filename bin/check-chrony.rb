@@ -43,7 +43,7 @@ class CheckChrony < Sensu::Plugin::Check::CLI
   option :handlers,
          :description => "Comma separated list of handlers",
          :long => "--handlers <HANDLER>",
-         :proc => proc { |s| s.split(',') }
+         :proc => proc { |s| s.split(',') },
          :default => []
 
   option :dryrun,
