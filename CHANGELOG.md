@@ -5,6 +5,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## Unreleased
 
+## [0.0.4] - 2016-01-14
+### Added
+- not using config[:handler]
+
 ## [0.0.3] - 2015-12-28
 ### Added
 - Rounding offset
