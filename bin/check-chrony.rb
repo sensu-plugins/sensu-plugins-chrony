@@ -94,7 +94,7 @@ class CheckChrony < Sensu::Plugin::Check::CLI
       case line.downcase
         when /^stratum\s*:\s*(\d+)$/
           stratum = $1.to_i
-        when /^last offset\s*:\s*([-+]?[.\d]+)\s*seconds$/
+        when /^last offset\s*:\s*([\-\+]?[.\d]+)\s*seconds$/
           # convert from seconds to milliseconds
           offset = $1.to_f * 1000
         when /^leap status\s*:\s*(.*?)$/
@@ -102,8 +102,8 @@ class CheckChrony < Sensu::Plugin::Check::CLI
       end
     end
 
+    check_name = "chrony-stratum"
     if stratum
-      check_name = "chrony-stratum"
       msg = "NTP stratum is #{stratum}"
 
       if stratum >= config[:crit_stratum]
@@ -119,8 +119,8 @@ class CheckChrony < Sensu::Plugin::Check::CLI
       send_unknown(check_name, "Failed to look up NTP stratum")
     end
 
+    check_name = "chrony-offset"
     if offset
-      check_name = "chrony-offset"
       msg = "NTP offset is #{offset.round(4)}ms"
 
       if offset >= config[:crit_offset] or offset <= -config[:crit_offset]
