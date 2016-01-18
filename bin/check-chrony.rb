@@ -94,7 +94,7 @@ class CheckChrony < Sensu::Plugin::Check::CLI
       case line.downcase
         when /^stratum\s*:\s*(\d+)$/
           stratum = $1.to_i
-        when /^last offset\s*:\s*(-?[.\d]+)\s*seconds$/
+        when /^last offset\s*:\s*([-+]?[.\d]+)\s*seconds$/
           # convert from seconds to milliseconds
           offset = $1.to_f * 1000
         when /^leap status\s*:\s*(.*?)$/
