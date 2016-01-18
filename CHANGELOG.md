@@ -5,6 +5,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## Unreleased
 
+## [0.0.7] - 2016-01-18
+### Added
+- fixing regex
+
 ## [0.0.6] - 2016-01-18
 ### Added
 - last offset regex should match both - and +
