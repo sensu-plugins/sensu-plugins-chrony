@@ -1,8 +1,18 @@
 # Sensu plugin for monitoring Chrony NTP
 
-A sensu plugin to monitor Chrony NTP.
+A sensu plugin to monitor Chrony NTP. There is also a metrics plugin for collecting things like offset, delay etc.
 
 The plugin generates multiple OK/WARN/CRIT/UNKNOWN check events via the sensu client socket (https://sensuapp.org/docs/latest/clients#client-socket-input) so that you do not miss state changes when monitoring offset, stratum and status.
+
+## Installation
+
+System-wide installation:
+
+    $ gem install sensu-plugins-chrony
+
+Embedded sensu installation:
+
+    $ /opt/sensu/embedded/bin/gem install sensu-plugins-chrony
 
 ## Files
 
