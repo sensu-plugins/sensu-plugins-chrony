@@ -4,6 +4,11 @@ A sensu plugin to monitor Chrony NTP.
 
 The plugin generates multiple OK/WARN/CRIT/UNKNOWN check events via the sensu client socket (https://sensuapp.org/docs/latest/clients#client-socket-input) so that you do not miss state changes when monitoring offset, stratum and status.
 
+## Files
+
+* bin/check-chrony.rb
+* bin/metrics-chrony.rb
+
 ## Usage
 
 The plugin accepts the following command line options:
