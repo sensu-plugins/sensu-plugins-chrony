@@ -5,6 +5,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## Unreleased
 
+## [0.0.8] - 2016-04-04
+### Added
+- adding metrics plugin (@vervas)
+
 ## [0.0.7] - 2016-01-18
 ### Added
 - fixing regex
