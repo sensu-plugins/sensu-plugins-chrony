@@ -3,7 +3,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
-## Unreleased
+## [0.0.9] - 2016-04-05
+### Added
+- fixed metrics key naming (@vervas)
 
 ## [0.0.8] - 2016-04-04
 ### Added
