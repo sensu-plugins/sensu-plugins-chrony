@@ -73,7 +73,7 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
 
     `chronyc tracking`.scan(pattern).reduce({}) do |hash, parsed|
       key, val, fraction = parsed
-      hash[key] = fraction ? val.to_f : val.to_i
+      hash[key.downcase.tr(" ", "_")] = fraction ? val.to_f : val.to_i
       hash
     end
   end
