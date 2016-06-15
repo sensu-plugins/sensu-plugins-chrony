@@ -42,7 +42,7 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
       config[:scheme] = config[:host]
     end
 
-    chronystats = get_chronystats(config[:host])
+    chronystats = get_chronystats
     critical "Failed to get chronycstats from #{config[:host]}" if chronystats.empty?
     metrics = {
       config[:scheme] => chronystats
@@ -55,26 +55,21 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
     ok
   end
 
-  def get_chronystats(host)
-    key_pattern = Regexp.compile(
-      [
-        "Stratum",
-        "Last offset",
-        "RMS offset",
-        "Frequency",
-        "Residual freq",
-        "Skew",
-        "Root delay",
-        "Root dispersion",
-        "Update interval"
-      ].join('|'))
-    num_val_pattern = /[\-\+]?[\d]+(\.[\d]+)?/
-    pattern = /^(#{key_pattern})\s*:\s*(#{num_val_pattern}).*$/
+  def get_chronystats
+    num_val_pattern = /^[-+]?\d+(\.\d+)?\s/
 
-    `chronyc tracking`.scan(pattern).reduce({}) do |hash, parsed|
-      key, val, fraction = parsed
-      hash[key.downcase.tr(" ", "_")] = fraction ? val.to_f : val.to_i
+    `chronyc tracking`.each_line.reduce({}) do |hash, line|
+      key, val = line.split(/\s*:\s*/)
+      matched = val.match(num_val_pattern) || (next hash)
+      number, fraction = matched.to_a
+      number = fraction ? number.to_f : number.to_i
+      number = - number if /slow/ =~ val # for system time
+      hash[snakecase(key)] = number
       hash
     end
+  end
+
+  def snakecase(str)
+    str.downcase.tr(' ', '_').gsub(/[()]/, '')
   end
 end
