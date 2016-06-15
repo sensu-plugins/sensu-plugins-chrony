@@ -34,7 +34,7 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
          description: 'Metric naming scheme, text to prepend to metric',
          short: '-s SCHEME',
          long: '--scheme SCHEME',
-         default: Socket.gethostname
+         default: "#{Socket.gethostname}.chronystats"
 
   def run
     # #YELLOW
@@ -45,11 +45,11 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
     chronystats = get_chronystats(config[:host])
     critical "Failed to get chronycstats from #{config[:host]}" if chronystats.empty?
     metrics = {
-      chronystats: chronystats
+      config[:scheme] => chronystats
     }
     metrics.each do |name, stats|
       stats.each do |key, value|
-        output([config[:scheme], name, key].join('.'), value)
+        output([name, key].join('.'), value)
       end
     end
     ok
