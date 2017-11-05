@@ -1,5 +1,4 @@
 #! /usr/bin/env ruby
-#  encoding: UTF-8
 #
 #   metrics-chrony
 #
@@ -42,7 +41,7 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
       config[:scheme] = config[:host]
     end
 
-    chronystats = get_chronystats
+    chronystats = chronystats
     critical "Failed to get chronycstats from #{config[:host]}" if chronystats.empty?
     metrics = {
       config[:scheme] => chronystats
@@ -55,17 +54,16 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
     ok
   end
 
-  def get_chronystats
+  def chronystats
     num_val_pattern = /^[-+]?\d+(\.\d+)?\s/
 
-    `chronyc tracking`.each_line.reduce({}) do |hash, line|
+    `chronyc tracking`.each_line.each_with_object({}) do |line, hash|
       key, val = line.split(/\s*:\s*/)
       matched = val.match(num_val_pattern) || (next hash)
       number, fraction = matched.to_a
       number = fraction ? number.to_f : number.to_i
       number = - number if /slow/ =~ val # for system time
       hash[snakecase(key)] = number
-      hash
     end
   end
 

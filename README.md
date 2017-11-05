@@ -1,5 +1,13 @@
 # Sensu plugin for monitoring Chrony NTP
 
+
+[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-chrony.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-chrony)
+[![Gem Version](https://badge.fury.io/rb/sensu-plugins-chrony.svg)](https://badge.fury.io/rb/sensu-plugins-chrony)
+[![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony)
+[![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony)
+[![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-chrony.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-chrony)
+[![Community Slack](https://slack.sensu.io/badge.svg)](https://slack.sensu.io/badge)
+
 A sensu plugin to monitor Chrony NTP. There is also a metrics plugin for collecting things like offset, delay etc.
 
 The plugin generates multiple OK/WARN/CRIT/UNKNOWN check events via the sensu client socket (https://sensuapp.org/docs/latest/clients#client-socket-input) so that you do not miss state changes when monitoring offset, stratum and status.
