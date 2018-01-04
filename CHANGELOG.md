@@ -5,6 +5,7 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+## [1.0.0] - 2018-01-04
 ### Breaking Change
 - remove ruby < 2.0 support (@majormoses)
 - require `sensu-plugin` 2.0 (@majormoses)
@@ -55,3 +56,16 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 ## [0.0.1] - 2015-12-28
 ### Added
 - Initial release
+
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/1.0.0...HEAD
+[1.0.2]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.10...1.0.0
+[0.0.10]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.9...0.0.10
+[0.0.9]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.8...0.0.9
+[0.0.8]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.7...0.0.8
+[0.0.7]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.6...0.0.7
+[0.0.6]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.5...0.0.6
+[0.0.5]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.4...0.0.5
+[0.0.4]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.3...0.0.4
+[0.0.3]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.2...0.0.3
+[0.0.2]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.1...0.0.2
+[0.0.1]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/00e3dfb1d044946ec5465f7075dce532bbb60cff...0.0.1
