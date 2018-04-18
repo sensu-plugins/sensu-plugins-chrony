@@ -41,7 +41,7 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
       config[:scheme] = config[:host]
     end
 
-    chronystats = chronystats
+    chronystats = get_chronystats
     critical "Failed to get chronycstats from #{config[:host]}" if chronystats.empty?
     metrics = {
       config[:scheme] => chronystats
@@ -54,7 +54,7 @@ class ChronyMetrics < Sensu::Plugin::Metric::CLI::Graphite
     ok
   end
 
-  def chronystats
+  def get_chronystats
     num_val_pattern = /^[-+]?\d+(\.\d+)?\s/
 
     `chronyc tracking`.each_line.each_with_object({}) do |line, hash|
