@@ -5,6 +5,8 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+
+## [1.0.1] - 2018-05-03
 ### Fixed
 - Fixes "undefined method `empty?"` (@jwatroba)
 
@@ -60,8 +62,9 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 ### Added
 - Initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/1.0.0...HEAD
-[1.0.2]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.10...1.0.0
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/1.0.0...1.0.1
+[1.0.0]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.10...1.0.0
 [0.0.10]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.9...0.0.10
 [0.0.9]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.8...0.0.9
 [0.0.8]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.7...0.0.8
