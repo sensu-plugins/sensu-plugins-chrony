@@ -5,6 +5,9 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+### Fixed
+- Fixes "undefined method `empty?"` (@jwatroba)
+
 ## [1.0.0] - 2018-01-04
 ### Breaking Change
 - remove ruby < 2.0 support (@majormoses)
