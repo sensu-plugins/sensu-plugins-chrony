@@ -42,5 +42,5 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.add_development_dependency 'rubocop',                   '~> 0.49.0'
   s.add_development_dependency 'yard',                      '~> 0.8'
 
-  s.add_runtime_dependency 'sensu-plugin', '~> 2.0'
+  s.add_runtime_dependency 'sensu-plugin', '>= 2', '< 4'
 end
