@@ -34,7 +34,7 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
   s.version                = SensuPluginsChrony::Version::VER_STRING
 
-  s.add_development_dependency 'bundler',                   '~> 1.7'
+  s.add_development_dependency 'bundler',                   '~> 2.0'
   s.add_development_dependency 'github-markup',             '~> 3.0'
   s.add_development_dependency 'rake',                      '~> 12.0'
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
