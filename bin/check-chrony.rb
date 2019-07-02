@@ -131,7 +131,7 @@ class CheckChrony < Sensu::Plugin::Check::CLI
         send_critical(check_name, msg)
       elsif stratum >= config[:warn_stratum]
         msg += ", expected < #{config[:warn_stratum]}"
-        send_critical(check_name, msg)
+        send_warning(check_name, msg)
       else
         send_ok(check_name, msg)
       end
@@ -147,8 +147,8 @@ class CheckChrony < Sensu::Plugin::Check::CLI
         msg += ", expected > -#{config[:crit_offset]} and < #{config[:crit_offset]}"
         send_critical(check_name, msg)
       elsif offset >= config[:warn_offset] || offset < -config[:warn_offset]
-        msg += ", expected > -#{config[:crit_offset]} and < #{config[:warn_offset]}"
-        send_critical(check_name, msg)
+        msg += ", expected > -#{config[:warn_offset]} and < #{config[:warn_offset]}"
+        send_warning(check_name, msg)
       else
         send_ok(check_name, msg)
       end
