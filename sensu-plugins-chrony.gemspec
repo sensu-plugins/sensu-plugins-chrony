@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
     'Matteo Cerutti',
     'Sensu-Plugins and contributors'
   ]
+
   s.date                   = Date.today.to_s
   s.description            = 'This plugin provides facilities for monitoring Chrony NTP'
   s.email                  = [
