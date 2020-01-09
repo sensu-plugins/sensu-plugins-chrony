@@ -4,7 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins/community/blob/master/HOW_WE_CHANGELOG.md)
 
 ## [Unreleased]
-
+## [1.0.2] - 2020-01-09
+### Fixed
+- Added sensu bonsai.
+- Upgraded versions to make it build again.
 
 ## [1.0.1] - 2018-05-03
 ### Fixed
