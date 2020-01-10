@@ -1,6 +1,10 @@
 language: ruby
+services:
+- docker
 cache:
 - bundler
+before_install:
+- gem install bundler
 install:
 - bundle install
 rvm:
@@ -25,5 +29,4 @@ deploy:
   on:
     tags: true
     all_branches: true
-    rvm: 2.3.0
     rvm: 2.4.1
