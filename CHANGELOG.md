@@ -5,6 +5,7 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-08-24
 ### Breaking Changes
 - Remove support for old Ruby (< 2.3)
 - Bump sensu-plugin dependency from ~> 2.0 to ~> 4.0
@@ -72,7 +73,8 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 ### Added
 - Initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/1.0.1...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/1.0.1...2.0.0
 [1.0.1]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.10...1.0.0
 [0.0.10]: https://github.com/sensu-plugins/sensu-plugins-ntp/compare/0.0.9...0.0.10
