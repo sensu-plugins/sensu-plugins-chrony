@@ -21,6 +21,13 @@ script:
 before_deploy:
 - bash -c "[ ! -d bonsai/ ] && git clone https://github.com/sensu/sensu-go-bonsai-asset.git bonsai || echo 'bonsai/ exists, skipping git clone'"
 deploy:
+- provider: script
+  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh sensu-plugins-chrony
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+    rvm: 2.4.1
 - provider: rubygems
   api_key:
     secure: Belk8rDqJbAISGNyULiLYf6IVRBNvQ4BxYI3dT5pzeWL3DIUTdUVnXRGRAonhhxAQhZ38ldfarZanTeYL4j51aWSK31IMV8hxpj0ZfNDs9eWeJ7xT7/Lq8uPB4Xpby+wHxV3MbBk3amE2CF5xrDxYrK4vek4h8lr+gbY9PuM73RQ9WmmOGeX131DDnFDjwqDiWQCzjmkIJq0lHAuj2Lts95SvuRx1dMDCD+2hyAaWWnZdpOutxDlIRKyZ/JxIyuLMGgFbgXVxOOiIwNfqMI1hFf8ZPVg5TuYAJfbnDwfBR2MzvFu560sFesIUmJM+QQjNYGhdHVdrlY1XFkIk98ekZetrAYgsbioz85DkCGHBPOFdtImUhlIVcSzvr8Gj9t2f2iQJSTPlgfUDtqJ+rra58or2pxZIiMwLHcntnOKMEn7h7l7AhNCD+UD5rg2kb06pkH+FmYozJzoa07DW+PnKYPM9TptHnsAcRTLVkr5/hJG/mw4rE+IMZa71dvdeq2yeuNBka2uL/95DjIQyia7xDwxu7P5LnBPxShF33dRpNXEn8maaVcivPC3yvtskbY5BfiLuAMHd/aBZS/SqX8fxoU2gZpWtYlAS261giNU16RNnaU6pQNj/zahnvZxJU7k67POm3UPVstDZ6xMDHYafE3bUmxmXfBOvRdev6xQzvc=
@@ -30,10 +37,3 @@ deploy:
     all_branches: true
     rvm: 2.4.1
     repo: sensu-plugins/sensu-plugins-chrony
-- provider: script
-  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh sensu-plugins-chrony
-  skip_cleanup: true
-  on:
-    tags: true
-    all_branches: true
-    rvm: 2.4.1
