@@ -14,6 +14,7 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 - Updated rubocop dependency to '~> 0.81.0'
 - Remediated rubocop issues
 - Updated rake dependency to '~> 13.0'
+- Fixed errors where warnings where sent as critical
 
 ## [1.0.1] - 2018-05-03
 ### Fixed
