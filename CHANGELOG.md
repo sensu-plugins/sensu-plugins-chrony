@@ -5,6 +5,15 @@ This CHANGELOG follows the format listed [here](https://github.com/sensu-plugins
 
 ## [Unreleased]
 
+### Breaking Changes
+- Remove support for old Ruby (< 2.3)
+- Bump sensu-plugin dependency from ~> 2.0 to ~> 4.0
+
+### Changed
+- Updated bundler dependancy to '~> 2.1'
+- Updated rubocop dependency to '~> 0.81.0'
+- Remediated rubocop issues
+- Updated rake dependency to '~> 13.0'
 
 ## [1.0.1] - 2018-05-03
 ### Fixed
