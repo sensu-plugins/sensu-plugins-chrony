@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
   s.version                = SensuPluginsChrony::Version::VER_STRING
 
   s.add_development_dependency 'bundler',                   '~> 2.1'
-  s.add_development_dependency 'github-markup',             '~> 3.0'
+  s.add_development_dependency 'github-markup',             '~> 4.0'
   s.add_development_dependency 'rake',                      '~> 13.0'
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
   s.add_development_dependency 'rspec',                     '~> 3.4'
