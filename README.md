@@ -3,9 +3,6 @@
 
 [![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-chrony.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-chrony)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-chrony.svg)](https://badge.fury.io/rb/sensu-plugins-chrony)
-[![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony)
-[![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-chrony)
-[![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-chrony.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-chrony)
 [![Community Slack](https://slack.sensu.io/badge.svg)](https://slack.sensu.io/badge)
 
 A sensu plugin to monitor Chrony NTP. There is also a metrics plugin for collecting things like offset, delay etc.
@@ -33,12 +30,12 @@ The plugin accepts the following command line options:
 
 ```
 Usage: check-chrony.rb (options)
-    -c, --chronyc-cmd <PATH>         Path to chronyc executable (default: /usr/bin/chronyc)
-        --crit-offset <OFFSET>       Critical if OFFSET exceeds current offset (ms)
+    -C, --chronyc-cmd <PATH>         Path to chronyc executable (default: /usr/bin/chronyc)
+    -c, --crit-offset <OFFSET>       Critical if OFFSET exceeds current offset (ms)
         --crit-stratum <STRATUM>     Critical if STRATUM exceeds current stratum
         --dryrun                     Do not send events to sensu client socket
-        --handlers <HANDLERS>        Comma separated list of handlers
-        --warn-offset <OFFSET>       Warn if OFFSET exceeds current offset (ms)
+        --handlers <HANDLER>         Comma separated list of handlers
+    -w, --warn-offset <OFFSET>       Warn if OFFSET exceeds current offset (ms)
         --warn-stratum <STRATUM>     Warn if STRATUM exceeds current stratum
 ```
 
