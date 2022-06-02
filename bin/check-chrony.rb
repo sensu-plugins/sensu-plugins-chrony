@@ -14,18 +14,20 @@ require 'json'
 class CheckChrony < Sensu::Plugin::Check::CLI
   option :chronyc_cmd,
          description: 'Path to chronyc executable (default: /usr/bin/chronyc)',
-         short: '-c <PATH>',
+         short: '-C <PATH>',
          long: '--chronyc-cmd <PATH>',
          default: '/usr/bin/chronyc'
 
   option :warn_offset,
          description: 'Warn if OFFSET exceeds current offset (ms)',
+         short: '-w <OFFSET>',
          long: '--warn-offset <OFFSET>',
          proc: proc(&:to_f),
          default: 50
 
   option :crit_offset,
          description: 'Critical if OFFSET exceeds current offset (ms)',
+         short: '-c <OFFSET>',
          long: '--crit-offset <OFFSET>',
          proc: proc(&:to_f),
          default: 100
